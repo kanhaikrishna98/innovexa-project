@@ -19,10 +19,18 @@ const clientUrl = configuredOrigins[0] || DEFAULT_CLIENT_ORIGINS[0];
 
 app.disable("x-powered-by");
 app.set("trust proxy", 1);
+const allowedOrigins = new Set([
+  "https://innovexa-frontend-live.vercel.app",
+  "https://innovexa-frontend-git-main-innovexa-0f43.vercel.app",
+]);
+
 app.use(cors({
   origin(origin, callback) {
-    if (!origin || clientOrigins.has(origin)) return callback(null, true);
-    return callback(null, false);
+    if (!origin || allowedOrigins.has(origin)) {
+      return callback(null, true);
+    }
+
+    return callback(new Error("Not allowed by CORS"));
   },
   credentials: true,
   methods: ["GET", "POST", "PATCH", "OPTIONS"],
