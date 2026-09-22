@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovexa:Your Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"><!--icon -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!--chart-->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!--google font-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><!-- Font files connection -->
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Poppins font load -->
+</head>
+
+<body>
+    <section id="auth-section" class="auth-section">
+
+        <div id="login-box" class="auth-box">
+
+            <h1>Welcome Back</h1>
+
+            <p>Login to continue</p>
+
+            <form id="login-form">
+
+                <input type="email" id="login-email" placeholder="Email" required>
+
+                <input type="password" id="login-password" placeholder="Password" required>
+
+                <button type="submit">
+                    Login
+                </button>
+
+            </form>
+
+            <p>
+                Don't have an account?
+
+                <button id="show-signup" type="button">
+                    Sign Up
+                </button>
+
+            </p>
+
+        </div>
+
+
+        <div id="signup-box" class="auth-box">
+
+            <h1>Create Account</h1>
+
+            <p>Sign up to continue</p>
+
+            <form id="signup-form">
+
+                <input type="text" id="signup-name" placeholder="Full Name" required>
+
+                <input type="text" id="signup-category" placeholder="Category" required>
+
+                <input type="email" id="signup-email" placeholder="Email" required>
+
+                <input type="password" id="signup-password" placeholder="Password" required>
+
+                <input type="file" id="signup-image" accept="image/*" required>
+
+                <button type="submit">
+                    Sign Up
+                </button>
+
+            </form>
+
+            <p>
+                Already have an account?
+
+                <button id="show-login" type="button">
+                    Login
+                </button>
+
+            </p>
+
+        </div>
+
+    </section>
+    <!--==============login section==========-->
+    <div class="container">
+
+        <aside id="aside" class="aside-bar">
+            <div class="logo">
+                <img src="logo.png" alt="logo">
+            </div>
+            <!-- navigation section-->
+            <ul class="nav-list">
+                <li class="nav-list-item"><a href="index.html" class="nav-link" target="_blank">
+                        <i class="fa-solid fa-house" style="color: rgb(245, 248, 249);"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-list-item"><a href="profile.html" class="nav-link">
+                        <i class="fa-solid fa-user" style="color: rgb(245, 248, 249);"></i>
+                        <span>profile</span>
+                    </a>
+                </li>
+                <li class="nav-list-item"><a href="subject.html" target="_blank" class="nav-link">
+                        <i class="fa-solid fa-book" style="color: rgb(245, 248, 249);"></i>
+                        <span>Subject</span>
+                    </a>
+                </li>
+                <li class="nav-list-item"><a href="performation.html" target="_blank" class="nav-link">
+                        <i class="fa-solid fa-chart-line" style="color: rgb(245, 248, 249);"></i>
+                        <span>Performance</span>
+                    </a>
+                </li>
+                <li class="nav-list-item"><a href="study.html" target="_blank" class="nav-link">
+                        <i class="fa-solid fa-table-list" style="color: rgb(245, 248, 249);"></i>
+                        <span>Study Plan</span>
+                    </a>
+                </li>
+                <li class="nav-list-item">
+                    <a href="chatbot.html" target="_blank" class="nav-link">
+                        <i class="fa-solid fa-microchip" style="color: rgb(245, 248, 249);"></i>
+                        <span>Chatbot</span>
+                    </a>
+                </li>
+                <li class="nav-list-item"><a href="resources.html" target="_blank" class="nav-link">
+                        <i class="fa-solid fa-cubes-stacked" style="color: rgb(245, 248, 249);"></i>
+                        <span>Resources</span>
+                    </a>
+                </li>
+                <li class="nav-list-item"><a href="notification.html" target="_blank" class="nav-link">
+                        <i class="fa-regular fa-bell" style="color: rgb(245, 248, 249);"></i>
+                        <span>Notification</span>
+                        <span class="Messages-count">2</span>
+                    </a>
+                </li>
+                <li class="nav-list-item"><a href="setting.html" target="_blank" class="nav-link">
+                        <i class="fa-solid fa-gear" style="color: rgb(245, 248, 249);"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+                <li class="nav-list-item"><a href="logout.html" class="nav-link">
+                        <i class="fa-solid fa-right-from-bracket" style="color: rgb(245, 248, 249);"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+
+            </ul>
+            <div class="buttom-image">
+                <img src="buttomimg.jpeg" alt="buttom image">
+            </div>
+        </aside>
+        <!--===========content section==============-->
+        <div class="content" id="content">
+            <!--===========header============-->
+            <header id="header" class="header">
+                <!--left-header-info-->
+                <div class="left-header-info">
+                    <button id="aside-btn" class="aside-btn"><i class="fa-solid fa-bars"></i></button>
+                    <div class="nav-pagename">
+                        <span class="pagename">Your Profile</span>
+                        <span class="welcome">Welcome back ,<span class="urname">User</span></span>
+                    </div>
+                </div>
+                <!--right-header-info-->
+                <div class="right-header-info">
+                    <div class="user-info">
+                        <div class="user-pic"><a href="profile.html" target="_blank"> <img src="userimage.jpg"
+                                    id="user-pic" alt="userimage"></a></div>
+                        <a href="profile.html" target="_blank"> <span class="user-name" id="user-name">Ayush Kumar
+                                Mandal<span id="user-profession">Student</span><span
+                                    id="user-email">mandalayush@gmail.com</span></span></a>
+
+                    </div>
+
+                    <div class="datetime" id="datetime">
+                        <div class="time">00:00:00</div>
+                        <div class="date">00 September 0000</div>
+                        <div class="day">Day</div>
+                    </div>
+                </div>
+            </header>
+            <!---===========main -content=============-->
+            <main class="main" id="main">
+                <section class="profile-page">
+
+                    <!-- Profile Header -->
+                    <div class="profile-page-header">
+                        <div>
+                            <span class="profile-label">STUDENT PROFILE</span>
+                            <h1>My Profile</h1>
+                            <p>View and manage your personal and academic information.</p>
+                        </div>
+
+                        <button type="button" id="edit-profile-btn" class="profile-edit-btn">
+                            <i class="fa-solid fa-pen"></i>
+                            Edit Profile
+                        </button>
+                    </div>
+
+
+                    <!-- Profile Overview -->
+                    <div class="profile-card profile-overview">
+
+                        <div class="profile-image-section">
+
+                            <div class="profile-image-box">
+                                <img id="profile-image" src="" alt="Profile Image">
+                                <div id="profile-image-placeholder">
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                            </div>
+
+                            <label for="profile-image-input" class="change-photo-btn">
+                                <i class="fa-solid fa-camera"></i>
+                                Change Photo
+                            </label>
+
+                            <input type="file" id="profile-image-input" accept="image/*" hidden>
+
+                        </div>
+
+
+                        <div class="profile-basic-info">
+
+                            <span class="profile-account-badge">
+                                <i class="fa-solid fa-circle-check"></i>
+                                Student Account
+                            </span>
+
+                            <h2 id="profile-name">Student Name</h2>
+
+                            <p id="profile-email">
+                                student@example.com
+                            </p>
+
+                            <div class="profile-basic-meta">
+
+                                <span>
+                                    <i class="fa-solid fa-user-tag"></i>
+                                    <b id="profile-category">Student</b>
+                                </span>
+
+                                <span>
+                                    <i class="fa-solid fa-graduation-cap"></i>
+                                    <b id="profile-course">Course not added</b>
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Personal Information -->
+                    <div class="profile-card">
+
+                        <div class="profile-section-title">
+
+                            <div class="profile-section-icon">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+
+                            <div>
+                                <h3>Personal Information</h3>
+                                <p>Your basic personal and contact details</p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="profile-form-grid">
+
+                            <div class="profile-form-group">
+                                <label>Full Name</label>
+
+                                <div class="profile-input-box">
+                                    <i class="fa-solid fa-user"></i>
+                                    <input type="text" id="profile-name-input" placeholder="Full Name" disabled>
+                                </div>
+                            </div>
+
+
+                            <div class="profile-form-group">
+                                <label>Email Address</label>
+
+                                <div class="profile-input-box">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <input type="email" id="profile-email-input" placeholder="Email" disabled>
+                                </div>
+                            </div>
+
+
+                            <div class="profile-form-group">
+                                <label>Category</label>
+
+                                <div class="profile-input-box">
+                                    <i class="fa-solid fa-user-tag"></i>
+                                    <input type="text" id="profile-category-input" placeholder="Category" disabled>
+                                </div>
+                            </div>
+
+
+                            <div class="profile-form-group">
+                                <label>Mobile Number</label>
+
+                                <div class="profile-input-box">
+                                    <i class="fa-solid fa-phone"></i>
+                                    <input type="tel" id="profile-mobile-input" placeholder="Mobile Number" disabled>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Academic Information -->
+                    <div class="profile-card">
+
+                        <div class="profile-section-title">
+
+                            <div class="profile-section-icon">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+
+                            <div>
+                                <h3>Academic Information</h3>
+                                <p>Your current education and academic background</p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="profile-form-grid">
+
+                            <div class="profile-form-group">
+                                <label>Current Class / Semester</label>
+
+                                <div class="profile-input-box">
+                                    <i class="fa-solid fa-layer-group"></i>
+                                    <input type="text" id="profile-class-input" placeholder="Example: 3rd Semester"
+                                        disabled>
+                                </div>
+                            </div>
+
+
+                            <div class="profile-form-group">
+                                <label>Current Course</label>
+
+                                <div class="profile-input-box">
+                                    <i class="fa-solid fa-book-open"></i>
+                                    <input type="text" id="profile-course-input" placeholder="Example: B.Tech CSE"
+                                        disabled>
+                                </div>
+                            </div>
+
+
+                            <div class="profile-form-group">
+                                <label>College / Institution</label>
+
+                                <div class="profile-input-box">
+                                    <i class="fa-solid fa-building-columns"></i>
+                                    <input type="text" id="profile-college-input" placeholder="College Name" disabled>
+                                </div>
+                            </div>
+
+
+                            <div class="profile-form-group">
+                                <label>Highest Education</label>
+
+                                <div class="profile-input-box">
+                                    <i class="fa-solid fa-award"></i>
+                                    <input type="text" id="profile-education-input" placeholder="Example: 12th Pass"
+                                        disabled>
+                                </div>
+                            </div>
+
+
+                            <div class="profile-form-group">
+                                <label>Specialization</label>
+
+                                <div class="profile-input-box">
+                                    <i class="fa-solid fa-microchip"></i>
+                                    <input type="text" id="profile-specialization-input" placeholder="Example: AI & ML"
+                                        disabled>
+                                </div>
+                            </div>
+
+
+                            <div class="profile-form-group">
+                                <label>Academic Year</label>
+
+                                <div class="profile-input-box">
+                                    <i class="fa-solid fa-calendar"></i>
+                                    <input type="text" id="profile-year-input" placeholder="Example: 2026-27" disabled>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Additional Information -->
+                    <div class="profile-card">
+
+                        <div class="profile-section-title">
+
+                            <div class="profile-section-icon">
+                                <i class="fa-solid fa-circle-info"></i>
+                            </div>
+
+                            <div>
+                                <h3>Additional Information</h3>
+                                <p>Other information related to your student profile</p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="profile-form-grid">
+
+                            <div class="profile-form-group">
+                                <label>Student ID / Roll Number</label>
+
+                                <div class="profile-input-box">
+                                    <i class="fa-solid fa-id-card"></i>
+                                    <input type="text" id="profile-student-id-input"
+                                        placeholder="Student ID / Roll Number" disabled>
+                                </div>
+                            </div>
+
+
+                            <div class="profile-form-group">
+                                <label>City / Location</label>
+
+                                <div class="profile-input-box">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <input type="text" id="profile-city-input" placeholder="City" disabled>
+                                </div>
+                            </div>
+
+
+                            <div class="profile-form-group">
+                                <label>Date of Birth</label>
+
+                                <div class="profile-input-box">
+                                    <i class="fa-solid fa-cake-candles"></i>
+                                    <input type="date" id="profile-dob-input" disabled>
+                                </div>
+                            </div>
+
+
+                            <div class="profile-form-group">
+                                <label>Institution Type</label>
+
+                                <div class="profile-input-box">
+                                    <i class="fa-solid fa-school"></i>
+
+                                    <select id="profile-institution-input" disabled>
+                                        <option value="">Select Type</option>
+                                        <option value="School">School</option>
+                                        <option value="College">College</option>
+                                        <option value="University">University</option>
+                                        <option value="Coaching">Coaching</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Save / Cancel -->
+                    <div id="profile-actions" class="profile-actions">
+
+                        <button type="button" id="profile-cancel-btn" class="profile-cancel-btn">
+                            Cancel
+                        </button>
+
+                        <button type="button" id="profile-save-btn" class="profile-save-btn">
+                            <i class="fa-solid fa-floppy-disk"></i>
+                            Save Changes
+                        </button>
+
+                    </div>
+
+
+                    <div id="profile-save-message" class="profile-save-message">
+                        <i class="fa-solid fa-circle-check"></i>
+                        Profile updated successfully.
+                    </div>
+
+                </section>
+                <!--==========footer=============-->
+                <footer class="site-footer">
+
+                    <div class="footer-container">
+
+                        <!-- About -->
+                        <div class="footer-column footer-about">
+
+                            <h3 class="footer-logo">
+                                innovexa
+                            </h3>
+
+                            <p>
+                                Innovexa is a smart education platform designed
+                                to help students track their academic performance,
+                                manage learning activities, identify weak areas
+                                and improve their overall learning journey.
+                            </p>
+
+                            <p class="footer-tagline">
+                                Students Innovations — Smart Education
+                            </p>
+
+                        </div>
+
+
+                        <!-- Vision -->
+                        <div class="footer-column">
+
+                            <h4>Our Vision</h4>
+
+                            <p>
+                                Our vision is to create a smarter and more
+                                personalized learning environment where every
+                                student can understand their performance,
+                                improve their skills and move towards their goals
+                                with confidence.
+                            </p>
+
+                        </div>
+
+
+                        <!-- Team -->
+                        <div class="footer-column">
+
+                            <h4>Our Team</h4>
+
+                            <ul class="team-list">
+                                <li>
+                                    <span>Ayush Kumar Mandal</span>
+                                    <span> <i class="fa-solid fa-envelope"></i>
+
+                                        <a href="mailto: mandalayushkumar.123@gmail.com">
+                                            mandalayushkumar.123@gmail.com
+                                        </a></span>
+                                </li>
+
+                                <li>
+                                    <span>Abhishek Kumar </span>
+                                    <span> <i class="fa-solid fa-envelope"></i>
+
+                                        <a href="mailto:hack.avi4@gmail.com">
+                                            hack.avi4@gmail.com
+                                        </a></span>
+                                </li>
+
+                                <li>
+                                    <span>Krishna Kumar</span>
+                                    <span> <i class="fa-solid fa-envelope"></i>
+
+                                        <a href="mailto:kkumar79983@gmail.com">
+                                            kkumar79983@gmail.com
+                                        </a></span>
+                                </li>
+
+                                <li>
+                                    <span>Saurav Kumar</span>
+                                    <span> <i class="fa-solid fa-envelope"></i>
+
+                                        <a href="mailto:sauravkumar257576@gmail.co">
+                                            sauravkumar257576@gmail.com
+                                        </a></span>
+                                </li>
+
+                                <li>
+                                    <span>Aakriti Ranjan</span>
+                                    <span> <i class="fa-solid fa-envelope"></i>
+
+                                        <a href="mailto:akritiranjan655@gmail.com">
+                                            akritiranjan655@gmail.com
+                                        </a></span>
+                                </li>
+
+                                <li>
+                                    <span>Shubham Raj</span>
+                                    <span> <i class="fa-solid fa-envelope"></i>
+
+                                        <a href="mailto:shubhamraj360d@gmail.com">
+                                            shubhamraj360d@gmail.com
+                                        </a></span>
+                                </li>
+
+                                <li>
+                                    <span>Krish Kumar Sant </span>
+                                    <span> <i class="fa-solid fa-envelope"></i>
+
+                                        <a href="mailto:krish0101kumar@gmail.com">
+                                            krish0101kumar@gmail.com
+                                        </a></span>
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+
+                        <!-- Contribution -->
+                        <div class="footer-column">
+
+                            <h4>Contributions</h4>
+
+                            <ul class="contribution-list">
+
+                                <li>
+                                    <span>Ayush Kumar Mandal</span>
+                                    <span>Frontend & Architecture</span>
+                                </li>
+
+                                <li>
+                                    <span>Abhishek Kumar </span>
+                                    <span>UI/UX Design</span>
+                                </li>
+
+                                <li>
+                                    <span>Krishna Kumar</span>
+                                    <span>Backend & Database</span>
+                                </li>
+
+                                <li>
+                                    <span>Saurav Kumar</span>
+                                    <span>Python,ML & Recommendation</span>
+                                </li>
+
+                                <li>
+                                    <span>Aakriti Ranjan</span>
+                                    <span>API integration & Testing</span>
+                                </li>
+
+                                <li>
+                                    <span>Shubham Raj</span>
+                                    <span>Git & GitHub</span>
+                                </li>
+
+                                <li>
+                                    <span>Krish Kumar Sant </span>
+                                    <span>Presentation</span>
+                                </li>
+                            </ul>
+
+                        </div>
+
+
+                        <!-- Contact -->
+                        <div class="footer-column">
+
+                            <h4>Contact Us</h4>
+
+                            <div class="contact-item">
+                                <i class="fa-solid fa-envelope"></i>
+                                <span>support@innovexa.com</span>
+                            </div>
+
+                            <div class="contact-item">
+                                <i class="fa-solid fa-phone"></i>
+                                <span>+91 98765 xxxxx</span>
+                            </div>
+
+                            <div class="contact-item">
+                                <i class="fa-brands fa-whatsapp"></i>
+                                <span>+91 98765 xxxxx</span>
+                            </div>
+
+
+                            <div class="footer-social">
+
+                                <a href="#" aria-label="YouTube">
+                                    <i class="fa-brands fa-youtube"></i>
+                                </a>
+
+                                <a href="#" aria-label="Instagram">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+
+                                <a href="#" aria-label="Facebook">
+                                    <i class="fa-brands fa-facebook"></i>
+                                </a>
+
+                                <a href="#" aria-label="LinkedIn">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </a>
+
+                                <a href="#" aria-label="X">
+                                    <i class="fa-brands fa-x-twitter"></i>
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Bottom -->
+                    <div class="footer-bottom">
+
+                        <p>
+                            © 2026 Innovexa. All rights reserved.
+                        </p>
+
+                        <div class="footer-links">
+
+                            <a href="#">Privacy Policy</a>
+
+                            <a href="#">Terms & Conditions</a>
+
+                            <a href="#">Contact</a>
+
+                        </div>
+
+                    </div>
+
+                </footer>
+
+            </main>
+
+
+</body>
+<script src="script.js"></script>
+<script src="api.js"></script>
+<script src="script.js"></script>
+<script src="profile.js"></script>
+
+</html>

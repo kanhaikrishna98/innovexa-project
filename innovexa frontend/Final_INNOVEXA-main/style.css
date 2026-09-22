@@ -1,0 +1,886 @@
+
+:root {
+    --bg: #050617;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    width: 100%;
+    min-height: 100%;
+}
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: var(--bg);
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+}
+a {
+    text-decoration: none;
+}
+/* ==============MAIN CONTAINER================ */
+.container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+}
+/* ----------
+   SIDEBAR
+---------- */
+.aside-bar {
+    display: grid;
+    grid-template-rows: 100px 1fr 200px;
+    /* Closed state */
+    width: 0;
+    min-width: 0;
+    min-height: 100vh;
+    flex-shrink: 0;
+    background: #050617;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    overflow: hidden;
+    visibility: hidden;
+    box-shadow: 0 5px 12px -6px rgba(0, 255, 255, 0.7);
+    transition:
+    width 0.5s ease-in-out,
+    visibility 0s linear 0.5s;
+}
+/* =========================
+   ACTIVE SIDEBAR
+========================= */
+.aside-bar.active-aside {
+    width: clamp(180px, 15vw, 260px);
+    min-width: clamp(180px, 15vw, 260px);
+    visibility: visible;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    align-self: flex-start;
+    transition:
+    width 0.5s ease-in-out,
+    visibility 0s linear 0s;
+}
+
+/* =========================
+   LOGO
+========================= */
+.container .aside-bar .logo {
+    width: 100%;
+    height: 100px;
+}
+
+.container .aside-bar .logo img {
+    display: block;
+    width: 100%;
+    height: 100px;
+    padding: 20px;
+    object-fit: contain;
+}
+/* =========================
+   NAVIGATION
+========================= */
+.container .aside-bar .nav-list {
+    width: 100%;
+    padding: 10px;
+}
+
+.container .aside-bar .nav-list .nav-list-item {
+    list-style: none;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    text-align: left;
+}
+.container .aside-bar .nav-list .nav-list-item:hover {
+    box-shadow: 1px 1px 7px 0px cyan;
+}
+/* =========================
+   NAV LINK
+===================== */
+.container .aside-bar .nav-list .nav-list-item .nav-link {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-width: 0;
+    gap: 7px;
+    font-size: clamp(13px, 1vw, 15px);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: aliceblue;
+}
+.container .aside-bar .nav-list .nav-list-item .nav-link i {
+    flex-shrink: 0;
+}
+/* =========================
+   MESSAGE COUNT
+========================= */
+.container .aside-bar .nav-list .nav-list-item .nav-link .Messages-count {
+    width: 20px;
+    min-width: 20px;
+    height: 20px;
+    margin-left: auto;
+    border-radius: 50%;
+    background: #110cac;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 13px;
+}
+/* =========================
+   BOTTOM IMAGE
+========================= */
+.buttom-image {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.buttom-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    object-fit: contain;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+    width: auto;
+    min-height: 100vh;
+    transition: none;
+}
+/* =========================
+   HEADER
+========================= */
+.header {
+    width: 100%;
+    min-width: 0;
+    height: 130px;
+    padding-left: 20px;
+    background: #050617;
+    border-radius: 0 0 3px 3px;
+    box-shadow: 0 5px 12px -6px rgba(0, 255, 255, 0.7);
+    display: grid;
+    grid-template-columns:
+        minmax(220px, 30%)
+        minmax(0, 1fr)
+        minmax(220px, 20%);
+    align-items: center;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+/* =========================
+   LEFT HEADER
+========================= */
+.header .left-header-info {
+    display: flex;
+    align-items: center;
+
+    min-width: 0;
+}
+
+/* =========================
+   SIDEBAR BUTTON
+========================= */
+
+.header .left-header-info .aside-btn {
+    flex-shrink: 0;
+    padding: 20px;
+    border: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.header .left-header-info .aside-btn i {
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    text-shadow:
+        0 0 8px rgba(0, 255, 255, 0.808);
+    transition: color 0.2s ease;
+}
+
+.header .left-header-info .aside-btn i:hover {
+    color: cyan;
+}
+/* =========================
+   PAGE NAME
+========================= */
+
+.header .left-header-info .nav-pagename {
+    padding: 5px 15px;
+    min-width: 0;
+}
+
+.header .left-header-info .nav-pagename .pagename {
+    display: block;
+    font-size: clamp(20px, 1vw, 25px);
+    color: white;
+    font-weight: 600;
+    white-space: nowrap;
+    text-shadow:
+        0 0 8px rgba(0, 255, 255, 0.808);
+}
+
+.header .left-header-info .nav-pagename .welcome {
+    display: block;
+    padding-top: 3px;
+    color: rgb(255, 255, 255);
+    font-size: clamp(10px, 1vw, 15px);
+    white-space: nowrap;
+}
+
+.header .left-header-info .nav-pagename .welcome .urname {
+    color: rgb(77, 221, 243);
+
+    font-size: inherit;
+}
+/* =========================
+   RIGHT HEADER
+========================= */
+
+.right-header-info {
+    grid-column: 3;
+    width: 100%;
+    min-width: 0;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* =========================
+   USER INFO
+========================= */
+.right-header-info .user-info {
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+}
+/* =========================
+   USER IMAGE
+========================= */
+
+.right-header-info .user-info .user-pic {
+    display: block;
+    flex-shrink: 0;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid cyan;
+    box-shadow:
+        0 0 8px 1px rgba(0, 255, 255, 0.808);
+}
+.right-header-info .user-info .user-pic img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+/* =========================
+   USER NAME
+========================= */
+.right-header-info .user-info > a {
+    min-width: 0;
+    max-width: 100%;
+}
+.right-header-info .user-info .user-name {
+    display: block;
+    min-width: 0;
+    font-size: clamp(15px, 1vw, 20px);
+    color: white;
+    font-weight: 600;
+    text-shadow:
+        0 0 8px rgba(0, 255, 255, 0.808);
+    margin: 0;
+    position: static;
+    overflow: hidden;
+}
+
+.right-header-info .user-info .user-name #user-profession {
+    display: block;
+    margin-left: 0;
+    font-size: 12px;
+    color: rgb(255, 255, 255);
+    font-weight: lighter;
+    text-shadow: none;
+}
+.right-header-info .user-info .user-name #user-email {
+    display: block;
+    margin-left: 0;
+    font-size: 10px;
+    color: rgb(255, 255, 255);
+    font-weight: lighter;
+    text-shadow: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+/* =========================
+   DATE / TIME
+========================= */
+.datetime {
+    width: 130px;
+    min-width: 130px;
+    padding: 3px;
+    margin: 0;
+    text-align: center;
+    background: #030822;
+    border: 1px solid cyan;
+    border-radius: 10px;
+    color: white;
+    font-family: Arial, sans-serif;
+    box-shadow:
+        0 0 15px rgba(0, 255, 255, 0.3);
+
+    position: static;
+}
+.time {
+    font-size: 11px;
+    font-family: monospace;
+    font-weight: bold;
+    text-shadow:
+        0 0 5px cyan,
+        0 0 15px cyan;
+}
+.date {
+    margin-top: 2px;
+    font-size: 8px;
+}
+.day {
+    margin-top: 1px;
+    font-size: 8px;
+    opacity: 0.9;
+}
+/* ======== LOGIN / SIGNUP========= */
+
+.auth-section {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #050617;
+    padding: 20px;
+}
+.auth-box {
+    width: min(350px, 100%);
+    padding: 30px;
+    background: #030822;
+    border: 1px solid cyan;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    box-shadow:
+        0 0 20px rgba(0, 255, 255, 0.3);
+}
+.auth-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    background: #050617;
+    border: 1px solid #39456b;
+    border-radius: 8px;
+    color: white;
+    outline: none;
+}
+.auth-box input:focus {
+    border-color: cyan;
+}
+.auth-box button {
+    padding: 10px 18px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.auth-box form button {
+    width: 100%;
+    background: cyan;
+    color: #030822;
+    font-weight: bold;
+}
+#signup-box {
+    display: none;
+}
+.auth-box p {
+    margin-top: 15px;
+}
+.auth-box p button {
+    background: transparent;
+    color: cyan;
+    padding: 0;
+}
+
+/* =========================
+   AUTH Visibility
+========================= */
+body:not(.logged-in) .container {
+    display: none;
+}
+body.logged-in #auth-section {
+    display: none;
+}
+/* =======MOBILE========= */
+@media (max-width: 480px) {
+    .aside-bar.active-aside {
+        width: 70px;
+        min-width: 70px;
+    }
+    .header {
+        height: 110px;
+        padding-left: 5px;
+        grid-template-columns:
+            1fr
+            90px;
+    }
+    .right-header-info {
+        grid-column: 2;
+        padding: 0 5px;
+        align-items: center;
+    }
+    .right-header-info .user-info {
+        justify-content: center;
+    }
+    .right-header-info .user-info .user-name {
+        display: none;
+    }
+    .right-header-info .datetime {
+        width: 110px;
+        min-width: 110px;
+    }
+    .header .left-header-info .aside-btn {
+        padding: 15px;
+    }
+    .header .left-header-info .nav-pagename {
+        padding: 5px;
+    }
+    .header .left-header-info .nav-pagename .pagename {
+        font-size: 18px;
+    }
+    .header .left-header-info .nav-pagename .welcome {
+        font-size: 10px;
+    }
+    .container .aside-bar .nav-list .nav-list-item {
+        margin-left: 0;
+        text-align: center;
+    }
+    .container .aside-bar .nav-list .nav-list-item .nav-link {
+        justify-content: center;
+    }
+    .container .aside-bar .nav-list .nav-list-item .nav-link span {
+        display: none;
+    }
+    .Messages-count {
+        display: none !important;
+    }
+    .auth-box {
+        padding: 25px 20px;
+    }
+}
+
+
+/*==========main-section===============*/
+/* .main{
+    width: 100%;
+   flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    scroll-behavior:smooth;
+    scrollbar-width: none;
+    
+} */
+/*==========footer============*/
+.site-footer {
+    width: 100%;
+    background: #030822;
+    border-top: 1px solid #18213d;
+    box-sizing: border-box;
+    margin-top: 40px;
+}
+
+
+.footer-container {
+    width: 100%;
+    max-width: 1500px;
+    margin: auto;
+
+    padding: 55px 40px 40px;
+
+    box-sizing: border-box;
+
+    display: grid;
+
+    grid-template-columns:
+        1.5fr
+        1.2fr
+        1fr
+        1.2fr
+        1fr;
+
+    gap: 45px;
+}
+.footer-column .team-list  li >span:nth-child(2)> a {
+    color: #8f96ad;
+    font-size: 10px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-column .team-list  li >span:nth-child(2)> a:hover {
+    color: #49c4e8;
+}
+
+/* =========================
+   FOOTER COLUMNS
+========================= */
+
+.footer-column {
+    min-width: 0;
+}
+
+
+.footer-column h4 {
+    margin: 0 0 18px;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    position: relative;
+
+    padding-bottom: 10px;
+}
+
+
+.footer-column h4::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 28px;
+
+    height: 2px;
+
+    background: #49c4e8;
+
+    border-radius: 5px;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.footer-logo {
+    margin: 0 0 15px;
+
+    color: #49c4e8;
+
+    font-size: 26px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+}
+
+
+.footer-about p {
+    color: #8f96ad;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+    margin: 0 0 12px;
+
+    max-width: 330px;
+}
+
+
+.footer-about .footer-tagline {
+    color: #49c4e8;
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.3px;
+}
+
+
+/* =========================
+   VISION
+========================= */
+
+.footer-column > p {
+    color: #8f96ad;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+    margin: 0;
+}
+
+/* =========================
+   TEAM
+========================= */
+
+.team-list {
+    list-style: none;
+
+    margin: 0;
+
+    padding: 0;
+}
+
+
+.team-list li {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 2px;
+
+    margin-bottom: 13px;
+}
+
+
+.team-list li span {
+    color: #c8cde0;
+
+    font-size: 12px;
+
+    font-weight: 500;
+}
+
+
+.team-list li small {
+    color: #6f7893;
+
+    font-size: 10px;
+}
+
+
+/* =========================
+   CONTRIBUTION
+========================= */
+
+.contribution-list {
+    list-style: none;
+
+    padding: 0;
+
+    margin: 0;
+}
+
+
+.contribution-list li {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+
+    margin-bottom: 13px;
+}
+
+
+.contribution-list li span:first-child {
+    color: #c8cde0;
+
+    font-size: 10px;
+
+    font-weight: 500;
+}
+
+
+.contribution-list li span:last-child {
+    color: #6f7893;
+
+    font-size: 10px;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 14px;
+}
+
+
+.contact-item i {
+    width: 18px;
+
+    color: #49c4e8;
+
+    font-size: 13px;
+
+    text-align: center;
+}
+
+
+.contact-item span {
+    color: #8f96ad;
+
+    font-size: 11px;
+
+    word-break: break-word;
+}
+
+
+/* =========================
+   SOCIAL MEDIA
+========================= */
+
+.footer-social {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 22px;
+}
+
+
+.footer-social a {
+    width: 31px;
+
+    height: 31px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid #1d2949;
+
+    border-radius: 7px;
+
+    color: #8f96ad;
+
+    text-decoration: none;
+
+    background: rgba(255, 255, 255, 0.02);
+
+    transition:
+        color 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.footer-social a:hover {
+    color: #49c4e8;
+
+    border-color: rgba(73, 196, 232, 0.5);
+
+    background: rgba(73, 196, 232, 0.06);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 15px rgba(73, 196, 232, 0.12);
+}
+
+
+/* =========================
+   FOOTER BOTTOM
+========================= */
+
+.footer-bottom {
+    width: 100%;
+
+    border-top: 1px solid #121b35;
+
+    padding: 18px 40px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+.footer-bottom p {
+    margin: 0;
+
+    color: #626b85;
+
+    font-size: 10px;
+}
+
+
+.footer-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+.footer-links a {
+    color: #626b85;
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    transition: color 0.2s ease;
+}
+
+
+.footer-links a:hover {
+    color: #49c4e8;
+}
+
+/*============================This style.css file is common for all webpages==========*/
