@@ -1,7 +1,7 @@
 (function (window) {
     "use strict";
 
-    const defaultBaseUrl = "http://localhost:4000";
+    const defaultBaseUrl = "https://innovexa-backend-sqri.onrender.com";
 
     function getBaseUrl() {
         return (window.INNOVEXA_API_BASE_URL || defaultBaseUrl).replace(/\/+$/, "");
