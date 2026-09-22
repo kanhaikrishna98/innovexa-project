@@ -347,6 +347,6 @@ app.use((error, _req, res, _next) => {
   res.status(500).json({ error: "Internal server error" });
 });
 
-const port = Number(process.env.PORT || 4000);
+const port = Number.parseInt(process.env.PORT, 10) || 4000;
 if (require.main === module) app.listen(port, () => console.log(`Smart education API listening on port ${port}`));
 module.exports = app;
