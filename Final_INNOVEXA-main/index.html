@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovexa:Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"><!--icon -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!--chart-->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!--google font-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><!-- Font files connection -->
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Poppins font load -->
+</head>
+
+<body>
+    <section id="auth-section" class="auth-section">
+
+        <div id="login-box" class="auth-box">
+
+            <h1>Welcome Back</h1>
+
+            <p>Login to continue</p>
+
+            <form id="login-form">
+
+                <input type="email" id="login-email" placeholder="Email" required>
+
+                <input type="password" id="login-password" placeholder="Password" required>
+
+                <button type="submit">
+                    Login
+                </button>
+
+            </form>
+
+            <p>
+                Don't have an account?
+
+                <button id="show-signup" type="button">
+                    Sign Up
+                </button>
+
+            </p>
+
+        </div>
+
+
+        <div id="signup-box" class="auth-box">
+
+            <h1>Create Account</h1>
+
+            <p>Sign up to continue</p>
+
+            <form id="signup-form">
+
+                <input type="text" id="signup-name" placeholder="Full Name" required>
+
+                <input type="text" id="signup-category" placeholder="Category" required>
+
+                <input type="email" id="signup-email" placeholder="Email" required>
+
+                <input type="password" id="signup-password" placeholder="Password" required>
+
+                <input type="file" id="signup-image" accept="image/*" required>
+
+                <button type="submit">
+                    Sign Up
+                </button>
+
+            </form>
+
+            <p>
+                Already have an account?
+
+                <button id="show-login" type="button">
+                    Login
+                </button>
+
+            </p>
+
+        </div>
+
+    </section>
+    <!--==============login section==========-->
+    <div class="container">
+
+        <aside id="aside" class="aside-bar">
+            <div class="logo">
+                <img src="logo.png" alt="logo">
+            </div>
+            <!-- navigation section-->
+            <ul class="nav-list">
+                <li class="nav-list-item"><a href="index.html" class="nav-link">
+                        <i class="fa-solid fa-house" style="color: rgb(245, 248, 249);"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-list-item"><a href="profile.html" target="_blank" class="nav-link">
+                        <i class="fa-solid fa-user" style="color: rgb(245, 248, 249);"></i>
+                        <span>profile</span>
+                    </a>
+                </li>
+                <li class="nav-list-item"><a href="subject.html" target="_blank" class="nav-link">
+                        <i class="fa-solid fa-book" style="color: rgb(245, 248, 249);"></i>
+                        <span>Subject</span>
+                    </a>
+                </li>
+                <li class="nav-list-item"><a href="performation.html" target="_blank" class="nav-link">
+                        <i class="fa-solid fa-chart-line" style="color: rgb(245, 248, 249);"></i>
+                        <span>Performance</span>
+                    </a>
+                </li>
+                <li class="nav-list-item"><a href="study.html" target="_blank" class="nav-link">
+                        <i class="fa-solid fa-table-list" style="color: rgb(245, 248, 249);"></i>
+                        <span>Study Plan</span>
+                    </a>
+                </li>
+                <li class="nav-list-item">
+                    <a href="chatbot.html" target="_blank" class="nav-link">
+                        <i class="fa-solid fa-microchip" style="color: rgb(245, 248, 249);"></i>
+                        <span>Chatbot</span>
+                    </a>
+                </li>
+                <li class="nav-list-item"><a href="resources.html" target="_blank" class="nav-link">
+                        <i class="fa-solid fa-cubes-stacked" style="color: rgb(245, 248, 249);"></i>
+                        <span>Resources</span>
+                    </a>
+                </li>
+                <li class="nav-list-item"><a href="notification.html" target="_blank" class="nav-link">
+                        <i class="fa-regular fa-bell" style="color: rgb(245, 248, 249);"></i>
+                        <span>Notification</span>
+                        <span class="Messages-count">2</span>
+                    </a>
+                </li>
+                <li class="nav-list-item"><a href="setting.html" target="_blank" class="nav-link">
+                        <i class="fa-solid fa-gear" style="color: rgb(245, 248, 249);"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+                <li class="nav-list-item"><a href="logout.html" class="nav-link">
+                        <i class="fa-solid fa-right-from-bracket" style="color: rgb(245, 248, 249);"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+
+            </ul>
+            <div class="buttom-image">
+                <img src="buttomimg.jpeg" alt="buttom image">
+            </div>
+        </aside>
+        <!--===========content section==============-->
+        <div class="content" id="content">
+            <!--===========header============-->
+            <header id="header" class="header">
+                <!--left-header-info-->
+                <div class="left-header-info">
+                    <button id="aside-btn" class="aside-btn"><i class="fa-solid fa-bars"></i></button>
+                    <div class="nav-pagename">
+                        <span class="pagename">Dashboard</span>
+                        <span class="welcome">Welcome back ,<span class="urname">User</span></span>
+                    </div>
+                </div>
+                <!--right-header-info-->
+                <div class="right-header-info">
+                    <div class="user-info">
+                        <div class="user-pic"><a href="profile.html" target="_blank"> <img src="userimage.jpg"
+                                    id="user-pic" alt="userimage"></a></div>
+                        <a href="profile.html" target="_blank"> <span class="user-name" id="user-name">Ayush Kumar
+                                Mandal<span id="user-profession">Student</span><span
+                                    id="user-email">mandalayush@gmail.com</span></span></a>
+
+                    </div>
+
+                    <div class="datetime" id="datetime">
+                        <div class="time">00:00:00</div>
+                        <div class="date">00 September 0000</div>
+                        <div class="day">Day</div>
+                    </div>
+                </div>
+            </header>
+            <!---===========main -content=============-->
+            <main class="main" id="main">
+                <!--===========Today's Info=========-->
+
+                <div class="overall-info">
+
+                    <!-- =========================
+         OVERALL PERFORMANCE
+    ========================== -->
+                    <div class="overall-performance overall-info-innerdiv" id="overall-performance">
+
+                        <div class="overall-performance-icon inner-div-icon">
+                            <i class="fa-solid fa-chart-area" style="color: rgb(28, 75, 229);"></i>
+                        </div>
+
+                        <div class="overall-performance-record">
+
+                            <span class="overall-performance-lebal">
+                                Overall Performance
+                            </span>
+
+                            <span class="overall-performance-percentage">
+
+                                <!-- JS will insert performance here -->
+                                <span id="overall-performance-value"></span>
+
+                                <!-- JS will insert status here -->
+                                <span class="overall-performance-status" id="overall-performance-status"></span>
+
+                            </span>
+
+                        </div>
+                    </div>
+
+
+                    <!-- =========================
+         ENROLLED SUBJECT
+    ========================== -->
+                    <div class="enrolled-subject overall-info-innerdiv" id="enrolled-subject">
+
+                        <div class="enrolled-subject-icon inner-div-icon">
+                            <i class="fa-solid fa-trophy" style="color: rgb(18, 198, 57);"></i>
+                        </div>
+
+                        <div class="enrolled-subject-record">
+
+                            <span class="enrolled-subject-lebal">
+                                Subject
+                            </span>
+
+                            <span class="enrolled-subject-numbers">
+
+                                <!-- JS will insert number here -->
+                                <span id="enrolled-subject-value"></span>
+
+                                <span class="overall-performance-status" id="enrolled-subject-status">Enrolled
+                                </span>
+
+                            </span>
+
+                        </div>
+                    </div>
+
+
+                    <!-- =========================
+         ATTENDANCE
+    ========================== -->
+                    <div class="attendance overall-info-innerdiv" id="attendance">
+
+                        <div class="attendance-icon inner-div-icon">
+                            <i class="fa-solid fa-clipboard-user" style="color: rgb(208, 208, 31);"></i>
+                        </div>
+
+                        <div class="attendance-record">
+
+                            <span class="attendance-lebal">
+                                Attendance
+                            </span>
+
+                            <span class="attendance-percentage">
+
+                                <!-- JS will insert attendance here -->
+                                <span id="attendance-value"></span>
+
+                                <!-- JS will insert status here -->
+                                <span class="attendance-status" id="attendance-status"></span>
+
+                            </span>
+
+                        </div>
+                    </div>
+
+
+                    <!-- =========================
+         STUDY HOURS
+    ========================== -->
+                    <div class="study-hours overall-info-innerdiv" id="study-hours">
+
+                        <div class="study-hours-icon inner-div-icon">
+                            <i class="fa-solid fa-calendar-days" style="color: rgb(125, 62, 228);"></i>
+                        </div>
+
+                        <div class="study-hours-record">
+
+                            <span class="study-hours-lebal">
+                                Study Hours
+                            </span>
+
+                            <span class="study-hours-percentage">
+
+                                <!-- JS will insert study hours here -->
+                                <span id="study-hours-value"></span>
+
+                                <!-- JS will insert status here -->
+                                <span class="study-hours-status" id="study-hours-status"></span>
+
+                            </span>
+
+                        </div>
+                    </div>
+
+
+                    <!-- =========================
+         AI RISK LEVEL
+    ========================== -->
+                    <div class="ai-risk-level overall-info-innerdiv" id="ai-risk-level">
+
+                        <div class="ai-risk-level-icon inner-div-icon">
+                            <i class="fa-solid fa-bullseye" style="color: rgb(234, 48, 48);"></i>
+                        </div>
+
+                        <div class="ai-risk-level-record">
+
+                            <span class="ai-risk-level-lebal">
+                                AI Risk Level
+                            </span>
+
+                            <span class="ai-risk-level-percentage">
+
+                                <!-- JS will insert risk level here -->
+                                <span id="ai-risk-level-value"></span>
+
+                                <!-- JS will insert status here -->
+                                <span class="oveai-risk-level-status" id="oveai-risk-level-status"></span>
+
+                            </span>
+
+                        </div>
+                    </div>
+
+                </div>
+                <section class="today-performance">
+                    <div class="performance-header">
+                        <div>
+                            <h2>Today's Subject-wise Performance</h2>
+                            <p>Track your academic performance subject by subject</p>
+                        </div>
+                    </div>
+                    <!-- Main Performance Chart -->
+                    <div class="performance-chart-box">
+                        <div class="chart-title">
+                            <div>
+                                <h3>Performance Overview</h3>
+                                <p id="performance-subtitle"></p>
+                            </div>
+                            <span id="average-performance"></span>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="subjectPerformanceChart"></canvas>
+                        </div>
+                    </div>
+
+
+                    <!-- Difficulty Analysis -->
+
+                    <div class="difficulty-section">
+
+                        <div class="difficulty-header">
+
+                            <div>
+                                <h3>Question Difficulty Analysis</h3>
+                                <p>
+                                    Understand your performance according to question difficulty
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <div class="difficulty-chart-grid" id="difficulty-chart-grid">
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section class="daily-activity-section">
+
+                    <div class="daily-activity-header">
+
+                        <div>
+                            <h2>Daily Student Activity</h2>
+                            <p>Track attendance and study time on the platform</p>
+                        </div>
+
+                        <div class="activity-summary">
+                            <span id="attendance-summary">0/0 Present</span>
+                            <span id="study-summary">0 hrs studied</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="daily-activity-card">
+
+                        <div class="activity-card-top">
+
+                            <div>
+                                <h3>Attendance & Study Hours</h3>
+                                <p>Daily website activity overview</p>
+                            </div>
+
+                            <div class="activity-legend">
+
+                                <div class="legend-item">
+                                    <span class="legend-bar"></span>
+                                    <span>Study Hours</span>
+                                </div>
+
+                                <div class="legend-item">
+                                    <span class="legend-present"></span>
+                                    <span>Present</span>
+                                </div>
+
+                                <div class="legend-item">
+                                    <span class="legend-absent"></span>
+                                    <span>Absent</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="activity-chart-container">
+                            <canvas id="dailyActivityChart"></canvas>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!--===========footer==============-->
+                <footer class="site-footer">
+
+                    <div class="footer-container">
+
+                        <!-- About -->
+                        <div class="footer-column footer-about">
+
+                            <h3 class="footer-logo">
+                                innovexa
+                            </h3>
+
+                            <p>
+                                Innovexa is a smart education platform designed
+                                to help students track their academic performance,
+                                manage learning activities, identify weak areas
+                                and improve their overall learning journey.
+                            </p>
+
+                            <p class="footer-tagline">
+                                Students Innovations — Smart Education
+                            </p>
+
+                        </div>
+
+
+                        <!-- Vision -->
+                        <div class="footer-column">
+
+                            <h4>Our Vision</h4>
+
+                            <p>
+                                Our vision is to create a smarter and more
+                                personalized learning environment where every
+                                student can understand their performance,
+                                improve their skills and move towards their goals
+                                with confidence.
+                            </p>
+
+                        </div>
+
+
+                        <!-- Team -->
+                        <div class="footer-column">
+
+                            <h4>Our Team</h4>
+
+                            <ul class="team-list">
+                                <li>
+                                    <span>Ayush Kumar Mandal</span>
+                                    <span> <i class="fa-solid fa-envelope"></i>
+
+                                        <a href="mailto: mandalayushkumar.123@gmail.com">
+                                            mandalayushkumar.123@gmail.com
+                                        </a></span>
+                                </li>
+
+                                <li>
+                                    <span>Abhishek Kumar </span>
+                                    <span> <i class="fa-solid fa-envelope"></i>
+
+                                        <a href="mailto:hack.avi4@gmail.com">
+                                            hack.avi4@gmail.com
+                                        </a></span>
+                                </li>
+
+                                <li>
+                                    <span>Krishna Kumar</span>
+                                    <span> <i class="fa-solid fa-envelope"></i>
+
+                                        <a href="mailto:kkumar79983@gmail.com">
+                                            kkumar79983@gmail.com
+                                        </a></span>
+                                </li>
+
+                                <li>
+                                    <span>Saurav Kumar</span>
+                                    <span> <i class="fa-solid fa-envelope"></i>
+
+                                        <a href="mailto:sauravkumar257576@gmail.co">
+                                            sauravkumar257576@gmail.com
+                                        </a></span>
+                                </li>
+
+                                <li>
+                                    <span>Aakriti Ranjan</span>
+                                    <span> <i class="fa-solid fa-envelope"></i>
+
+                                        <a href="mailto:akritiranjan655@gmail.com">
+                                            akritiranjan655@gmail.com
+                                        </a></span>
+                                </li>
+
+                                <li>
+                                    <span>Shubham Raj</span>
+                                    <span> <i class="fa-solid fa-envelope"></i>
+
+                                        <a href="mailto:shubhamraj360d@gmail.com">
+                                            shubhamraj360d@gmail.com
+                                        </a></span>
+                                </li>
+
+                                <li>
+                                    <span>Krish Kumar Sant </span>
+                                    <span> <i class="fa-solid fa-envelope"></i>
+
+                                        <a href="mailto:krish0101kumar@gmail.com">
+                                            krish0101kumar@gmail.com
+                                        </a></span>
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+
+                        <!-- Contribution -->
+                        <div class="footer-column">
+
+                            <h4>Contributions</h4>
+
+                            <ul class="contribution-list">
+
+                                <li>
+                                    <span>Ayush Kumar Mandal</span>
+                                    <span>Frontend & Architecture</span>
+                                </li>
+
+                                <li>
+                                    <span>Abhishek Kumar </span>
+                                    <span>UI/UX Design</span>
+                                </li>
+
+                                <li>
+                                    <span>Krishna Kumar</span>
+                                    <span>Backend & Database</span>
+                                </li>
+
+                                <li>
+                                    <span>Saurav Kumar</span>
+                                    <span>Python,ML & Recommendation</span>
+                                </li>
+
+                                <li>
+                                    <span>Aakriti Ranjan</span>
+                                    <span>API integration & Testing</span>
+                                </li>
+
+                                <li>
+                                    <span>Shubham Raj</span>
+                                    <span>Git & GitHub</span>
+                                </li>
+
+                                <li>
+                                    <span>Krish Kumar Sant </span>
+                                    <span>Presentation</span>
+                                </li>
+                            </ul>
+
+                        </div>
+
+
+                        <!-- Contact -->
+                        <div class="footer-column">
+
+                            <h4>Contact Us</h4>
+
+                            <div class="contact-item">
+                                <i class="fa-solid fa-envelope"></i>
+                                <span>support@innovexa.com</span>
+                            </div>
+
+                            <div class="contact-item">
+                                <i class="fa-solid fa-phone"></i>
+                                <span>+91 98765 xxxxx</span>
+                            </div>
+
+                            <div class="contact-item">
+                                <i class="fa-brands fa-whatsapp"></i>
+                                <span>+91 98765 xxxxx</span>
+                            </div>
+
+
+                            <div class="footer-social">
+
+                                <a href="#" aria-label="YouTube">
+                                    <i class="fa-brands fa-youtube"></i>
+                                </a>
+
+                                <a href="#" aria-label="Instagram">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+
+                                <a href="#" aria-label="Facebook">
+                                    <i class="fa-brands fa-facebook"></i>
+                                </a>
+
+                                <a href="#" aria-label="LinkedIn">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </a>
+
+                                <a href="#" aria-label="X">
+                                    <i class="fa-brands fa-x-twitter"></i>
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Bottom -->
+                    <div class="footer-bottom">
+
+                        <p>
+                            © 2026 Innovexa. All rights reserved.
+                        </p>
+
+                        <div class="footer-links">
+
+                            <a href="#">Privacy Policy</a>
+
+                            <a href="#">Terms & Conditions</a>
+
+                            <a href="#">Contact</a>
+
+                        </div>
+
+                    </div>
+
+                </footer>
+
+
+
+            </main>
+
+
+
+
+</body>
+<script src="api.js"></script>
+<script src="script.js"></script>
+<script src="chart.js"></script>
+
+</html>
