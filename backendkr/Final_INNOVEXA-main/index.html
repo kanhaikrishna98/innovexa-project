@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Innovexa:Your Profile</title>
+    <title>Innovexa:Dashboard</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="dashboard.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"><!--icon -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!--chart-->
     <link rel="preconnect" href="https://fonts.googleapis.com"> <!--google font-->
@@ -100,44 +100,44 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
-                <li class="nav-list-item"><a href="profile.html" class="nav-link">
+                <li class="nav-list-item"><a href="profile.html" target="_blank" class="nav-link">
                         <i class="fa-solid fa-user" style="color: rgb(245, 248, 249);"></i>
                         <span>profile</span>
                     </a>
                 </li>
-                <li class="nav-list-item"><a href="subject.html" class="nav-link">
+                <li class="nav-list-item"><a href="subject.html" target="_blank" class="nav-link">
                         <i class="fa-solid fa-book" style="color: rgb(245, 248, 249);"></i>
                         <span>Subject</span>
                     </a>
                 </li>
-                <li class="nav-list-item"><a href="performation.html" class="nav-link">
+                <li class="nav-list-item"><a href="performation.html" target="_blank" class="nav-link">
                         <i class="fa-solid fa-chart-line" style="color: rgb(245, 248, 249);"></i>
                         <span>Performance</span>
                     </a>
                 </li>
-                <li class="nav-list-item"><a href="study.html" class="nav-link">
+                <li class="nav-list-item"><a href="study.html" target="_blank" class="nav-link">
                         <i class="fa-solid fa-table-list" style="color: rgb(245, 248, 249);"></i>
                         <span>Study Plan</span>
                     </a>
                 </li>
                 <li class="nav-list-item">
-                    <a href="chatbot.html" class="nav-link">
+                    <a href="chatbot.html" target="_blank" class="nav-link">
                         <i class="fa-solid fa-microchip" style="color: rgb(245, 248, 249);"></i>
                         <span>Chatbot</span>
                     </a>
                 </li>
-                <li class="nav-list-item"><a href="resources.html" class="nav-link">
+                <li class="nav-list-item"><a href="resources.html" target="_blank" class="nav-link">
                         <i class="fa-solid fa-cubes-stacked" style="color: rgb(245, 248, 249);"></i>
                         <span>Resources</span>
                     </a>
                 </li>
-                <li class="nav-list-item"><a href="notification.html" class="nav-link">
+                <li class="nav-list-item"><a href="notification.html" target="_blank" class="nav-link">
                         <i class="fa-regular fa-bell" style="color: rgb(245, 248, 249);"></i>
                         <span>Notification</span>
                         <span class="Messages-count">2</span>
                     </a>
                 </li>
-                <li class="nav-list-item"><a href="setting.html" class="nav-link">
+                <li class="nav-list-item"><a href="setting.html" target="_blank" class="nav-link">
                         <i class="fa-solid fa-gear" style="color: rgb(245, 248, 249);"></i>
                         <span>Settings</span>
                     </a>
@@ -161,7 +161,7 @@
                 <div class="left-header-info">
                     <button id="aside-btn" class="aside-btn"><i class="fa-solid fa-bars"></i></button>
                     <div class="nav-pagename">
-                        <span class="pagename">Your Profile</span>
+                        <span class="pagename">Dashboard</span>
                         <span class="welcome">Welcome back ,<span class="urname">User</span></span>
                     </div>
                 </div>
@@ -185,322 +185,256 @@
             </header>
             <!---===========main -content=============-->
             <main class="main" id="main">
-                <section class="profile-page">
+                <!--===========Today's Info=========-->
 
-                    <!-- Profile Header -->
-                    <div class="profile-page-header">
-                        <div>
-                            <span class="profile-label">STUDENT PROFILE</span>
-                            <h1>My Profile</h1>
-                            <p>View and manage your personal and academic information.</p>
+                <div class="overall-info">
+
+                    <!-- =========================
+         OVERALL PERFORMANCE
+    ========================== -->
+                    <div class="overall-performance overall-info-innerdiv" id="overall-performance">
+
+                        <div class="overall-performance-icon inner-div-icon">
+                            <i class="fa-solid fa-chart-area" style="color: rgb(28, 75, 229);"></i>
                         </div>
 
-                        <button type="button" id="edit-profile-btn" class="profile-edit-btn">
-                            <i class="fa-solid fa-pen"></i>
-                            Edit Profile
-                        </button>
-                    </div>
+                        <div class="overall-performance-record">
 
-
-                    <!-- Profile Overview -->
-                    <div class="profile-card profile-overview">
-
-                        <div class="profile-image-section">
-
-                            <div class="profile-image-box">
-                                <img id="profile-image" src="" alt="Profile Image">
-                                <div id="profile-image-placeholder">
-                                    <i class="fa-solid fa-user"></i>
-                                </div>
-                            </div>
-
-                            <label for="profile-image-input" class="change-photo-btn">
-                                <i class="fa-solid fa-camera"></i>
-                                Change Photo
-                            </label>
-
-                            <input type="file" id="profile-image-input" accept="image/*" hidden>
-
-                        </div>
-
-
-                        <div class="profile-basic-info">
-
-                            <span class="profile-account-badge">
-                                <i class="fa-solid fa-circle-check"></i>
-                                Student Account
+                            <span class="overall-performance-lebal">
+                                Overall Performance
                             </span>
 
-                            <h2 id="profile-name">Student Name</h2>
+                            <span class="overall-performance-percentage">
 
-                            <p id="profile-email">
-                                student@example.com
-                            </p>
+                                <!-- JS will insert performance here -->
+                                <span id="overall-performance-value"></span>
 
-                            <div class="profile-basic-meta">
+                                <!-- JS will insert status here -->
+                                <span class="overall-performance-status" id="overall-performance-status"></span>
 
-                                <span>
-                                    <i class="fa-solid fa-user-tag"></i>
-                                    <b id="profile-category">Student</b>
+                            </span>
+
+                        </div>
+                    </div>
+
+
+                    <!-- =========================
+         ENROLLED SUBJECT
+    ========================== -->
+                    <div class="enrolled-subject overall-info-innerdiv" id="enrolled-subject">
+
+                        <div class="enrolled-subject-icon inner-div-icon">
+                            <i class="fa-solid fa-trophy" style="color: rgb(18, 198, 57);"></i>
+                        </div>
+
+                        <div class="enrolled-subject-record">
+
+                            <span class="enrolled-subject-lebal">
+                                Subject
+                            </span>
+
+                            <span class="enrolled-subject-numbers">
+
+                                <!-- JS will insert number here -->
+                                <span id="enrolled-subject-value"></span>
+
+                                <span class="overall-performance-status" id="enrolled-subject-status">Enrolled
                                 </span>
 
-                                <span>
-                                    <i class="fa-solid fa-graduation-cap"></i>
-                                    <b id="profile-course">Course not added</b>
-                                </span>
-
-                            </div>
+                            </span>
 
                         </div>
-
                     </div>
 
 
-                    <!-- Personal Information -->
-                    <div class="profile-card">
+                    <!-- =========================
+         ATTENDANCE
+    ========================== -->
+                    <div class="attendance overall-info-innerdiv" id="attendance">
 
-                        <div class="profile-section-title">
+                        <div class="attendance-icon inner-div-icon">
+                            <i class="fa-solid fa-clipboard-user" style="color: rgb(208, 208, 31);"></i>
+                        </div>
 
-                            <div class="profile-section-icon">
-                                <i class="fa-solid fa-user"></i>
+                        <div class="attendance-record">
+
+                            <span class="attendance-lebal">
+                                Attendance
+                            </span>
+
+                            <span class="attendance-percentage">
+
+                                <!-- JS will insert attendance here -->
+                                <span id="attendance-value"></span>
+
+                                <!-- JS will insert status here -->
+                                <span class="attendance-status" id="attendance-status"></span>
+
+                            </span>
+
+                        </div>
+                    </div>
+
+
+                    <!-- =========================
+         STUDY HOURS
+    ========================== -->
+                    <div class="study-hours overall-info-innerdiv" id="study-hours">
+
+                        <div class="study-hours-icon inner-div-icon">
+                            <i class="fa-solid fa-calendar-days" style="color: rgb(125, 62, 228);"></i>
+                        </div>
+
+                        <div class="study-hours-record">
+
+                            <span class="study-hours-lebal">
+                                Study Hours
+                            </span>
+
+                            <span class="study-hours-percentage">
+
+                                <!-- JS will insert study hours here -->
+                                <span id="study-hours-value"></span>
+
+                                <!-- JS will insert status here -->
+                                <span class="study-hours-status" id="study-hours-status"></span>
+
+                            </span>
+
+                        </div>
+                    </div>
+
+
+                    <!-- =========================
+         AI RISK LEVEL
+    ========================== -->
+                    <div class="ai-risk-level overall-info-innerdiv" id="ai-risk-level">
+
+                        <div class="ai-risk-level-icon inner-div-icon">
+                            <i class="fa-solid fa-bullseye" style="color: rgb(234, 48, 48);"></i>
+                        </div>
+
+                        <div class="ai-risk-level-record">
+
+                            <span class="ai-risk-level-lebal">
+                                AI Risk Level
+                            </span>
+
+                            <span class="ai-risk-level-percentage">
+
+                                <!-- JS will insert risk level here -->
+                                <span id="ai-risk-level-value"></span>
+
+                                <!-- JS will insert status here -->
+                                <span class="oveai-risk-level-status" id="oveai-risk-level-status"></span>
+
+                            </span>
+
+                        </div>
+                    </div>
+
+                </div>
+                <section class="today-performance">
+                    <div class="performance-header">
+                        <div>
+                            <h2>Today's Subject-wise Performance</h2>
+                            <p>Track your academic performance subject by subject</p>
+                        </div>
+                    </div>
+                    <!-- Main Performance Chart -->
+                    <div class="performance-chart-box">
+                        <div class="chart-title">
+                            <div>
+                                <h3>Performance Overview</h3>
+                                <p id="performance-subtitle"></p>
                             </div>
+                            <span id="average-performance"></span>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="subjectPerformanceChart"></canvas>
+                        </div>
+                    </div>
+
+
+                    <!-- Difficulty Analysis -->
+
+                    <div class="difficulty-section">
+
+                        <div class="difficulty-header">
 
                             <div>
-                                <h3>Personal Information</h3>
-                                <p>Your basic personal and contact details</p>
+                                <h3>Question Difficulty Analysis</h3>
+                                <p>
+                                    Understand your performance according to question difficulty
+                                </p>
                             </div>
 
                         </div>
 
-
-                        <div class="profile-form-grid">
-
-                            <div class="profile-form-group">
-                                <label>Full Name</label>
-
-                                <div class="profile-input-box">
-                                    <i class="fa-solid fa-user"></i>
-                                    <input type="text" id="profile-name-input" placeholder="Full Name" disabled>
-                                </div>
-                            </div>
-
-
-                            <div class="profile-form-group">
-                                <label>Email Address</label>
-
-                                <div class="profile-input-box">
-                                    <i class="fa-solid fa-envelope"></i>
-                                    <input type="email" id="profile-email-input" placeholder="Email" disabled>
-                                </div>
-                            </div>
-
-
-                            <div class="profile-form-group">
-                                <label>Category</label>
-
-                                <div class="profile-input-box">
-                                    <i class="fa-solid fa-user-tag"></i>
-                                    <input type="text" id="profile-category-input" placeholder="Category" disabled>
-                                </div>
-                            </div>
-
-
-                            <div class="profile-form-group">
-                                <label>Mobile Number</label>
-
-                                <div class="profile-input-box">
-                                    <i class="fa-solid fa-phone"></i>
-                                    <input type="tel" id="profile-mobile-input" placeholder="Mobile Number" disabled>
-                                </div>
-                            </div>
-
+                        <div class="difficulty-chart-grid" id="difficulty-chart-grid">
                         </div>
 
-                    </div>
-
-
-                    <!-- Academic Information -->
-                    <div class="profile-card">
-
-                        <div class="profile-section-title">
-
-                            <div class="profile-section-icon">
-                                <i class="fa-solid fa-graduation-cap"></i>
-                            </div>
-
-                            <div>
-                                <h3>Academic Information</h3>
-                                <p>Your current education and academic background</p>
-                            </div>
-
-                        </div>
-
-
-                        <div class="profile-form-grid">
-
-                            <div class="profile-form-group">
-                                <label>Current Class / Semester</label>
-
-                                <div class="profile-input-box">
-                                    <i class="fa-solid fa-layer-group"></i>
-                                    <input type="text" id="profile-class-input" placeholder="Example: 3rd Semester"
-                                        disabled>
-                                </div>
-                            </div>
-
-
-                            <div class="profile-form-group">
-                                <label>Current Course</label>
-
-                                <div class="profile-input-box">
-                                    <i class="fa-solid fa-book-open"></i>
-                                    <input type="text" id="profile-course-input" placeholder="Example: B.Tech CSE"
-                                        disabled>
-                                </div>
-                            </div>
-
-
-                            <div class="profile-form-group">
-                                <label>College / Institution</label>
-
-                                <div class="profile-input-box">
-                                    <i class="fa-solid fa-building-columns"></i>
-                                    <input type="text" id="profile-college-input" placeholder="College Name" disabled>
-                                </div>
-                            </div>
-
-
-                            <div class="profile-form-group">
-                                <label>Highest Education</label>
-
-                                <div class="profile-input-box">
-                                    <i class="fa-solid fa-award"></i>
-                                    <input type="text" id="profile-education-input" placeholder="Example: 12th Pass"
-                                        disabled>
-                                </div>
-                            </div>
-
-
-                            <div class="profile-form-group">
-                                <label>Specialization</label>
-
-                                <div class="profile-input-box">
-                                    <i class="fa-solid fa-microchip"></i>
-                                    <input type="text" id="profile-specialization-input" placeholder="Example: AI & ML"
-                                        disabled>
-                                </div>
-                            </div>
-
-
-                            <div class="profile-form-group">
-                                <label>Academic Year</label>
-
-                                <div class="profile-input-box">
-                                    <i class="fa-solid fa-calendar"></i>
-                                    <input type="text" id="profile-year-input" placeholder="Example: 2026-27" disabled>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- Additional Information -->
-                    <div class="profile-card">
-
-                        <div class="profile-section-title">
-
-                            <div class="profile-section-icon">
-                                <i class="fa-solid fa-circle-info"></i>
-                            </div>
-
-                            <div>
-                                <h3>Additional Information</h3>
-                                <p>Other information related to your student profile</p>
-                            </div>
-
-                        </div>
-
-
-                        <div class="profile-form-grid">
-
-                            <div class="profile-form-group">
-                                <label>Student ID / Roll Number</label>
-
-                                <div class="profile-input-box">
-                                    <i class="fa-solid fa-id-card"></i>
-                                    <input type="text" id="profile-student-id-input"
-                                        placeholder="Student ID / Roll Number" disabled>
-                                </div>
-                            </div>
-
-
-                            <div class="profile-form-group">
-                                <label>City / Location</label>
-
-                                <div class="profile-input-box">
-                                    <i class="fa-solid fa-location-dot"></i>
-                                    <input type="text" id="profile-city-input" placeholder="City" disabled>
-                                </div>
-                            </div>
-
-
-                            <div class="profile-form-group">
-                                <label>Date of Birth</label>
-
-                                <div class="profile-input-box">
-                                    <i class="fa-solid fa-cake-candles"></i>
-                                    <input type="date" id="profile-dob-input" disabled>
-                                </div>
-                            </div>
-
-
-                            <div class="profile-form-group">
-                                <label>Institution Type</label>
-
-                                <div class="profile-input-box">
-                                    <i class="fa-solid fa-school"></i>
-
-                                    <select id="profile-institution-input" disabled>
-                                        <option value="">Select Type</option>
-                                        <option value="School">School</option>
-                                        <option value="College">College</option>
-                                        <option value="University">University</option>
-                                        <option value="Coaching">Coaching</option>
-                                        <option value="Other">Other</option>
-                                    </select>
-
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- Save / Cancel -->
-                    <div id="profile-actions" class="profile-actions">
-
-                        <button type="button" id="profile-cancel-btn" class="profile-cancel-btn">
-                            Cancel
-                        </button>
-
-                        <button type="button" id="profile-save-btn" class="profile-save-btn">
-                            <i class="fa-solid fa-floppy-disk"></i>
-                            Save Changes
-                        </button>
-
-                    </div>
-
-
-                    <div id="profile-save-message" class="profile-save-message">
-                        <i class="fa-solid fa-circle-check"></i>
-                        Profile updated successfully.
                     </div>
 
                 </section>
-                <!--==========footer=============-->
+
+                <section class="daily-activity-section">
+
+                    <div class="daily-activity-header">
+
+                        <div>
+                            <h2>Daily Student Activity</h2>
+                            <p>Track attendance and study time on the platform</p>
+                        </div>
+
+                        <div class="activity-summary">
+                            <span id="attendance-summary">0/0 Present</span>
+                            <span id="study-summary">0 hrs studied</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="daily-activity-card">
+
+                        <div class="activity-card-top">
+
+                            <div>
+                                <h3>Attendance & Study Hours</h3>
+                                <p>Daily website activity overview</p>
+                            </div>
+
+                            <div class="activity-legend">
+
+                                <div class="legend-item">
+                                    <span class="legend-bar"></span>
+                                    <span>Study Hours</span>
+                                </div>
+
+                                <div class="legend-item">
+                                    <span class="legend-present"></span>
+                                    <span>Present</span>
+                                </div>
+
+                                <div class="legend-item">
+                                    <span class="legend-absent"></span>
+                                    <span>Absent</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="activity-chart-container">
+                            <canvas id="dailyActivityChart"></canvas>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!--===========footer==============-->
                 <footer class="site-footer">
 
                     <div class="footer-container">
@@ -733,12 +667,16 @@
 
                 </footer>
 
+
+
             </main>
+
+
 
 
 </body>
 <script src="api.js"></script>
 <script src="script.js"></script>
-<script src="profile.js"></script>
+<script src="chart.js"></script>
 
 </html>
