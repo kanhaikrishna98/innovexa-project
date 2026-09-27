@@ -1,0 +1,236 @@
+<!-- Core Members Section — dossier/spec-sheet style, distinct from the reference screenshot -->
+<!-- Replace src="images/member-XX.jpg" with actual photos. Fonts load from Google Fonts (IBM Plex Sans + IBM Plex Mono). -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+<style>
+  .cm2-section {
+    background: #100e0c;
+    background-image:
+      linear-gradient(#1c1916 1px, transparent 1px),
+      linear-gradient(90deg, #1c1916 1px, transparent 1px);
+    background-size: 40px 40px;
+    padding: 56px 20px 72px;
+    font-family: 'Newsreader', serif;
+  }
+  .cm2-head {
+    max-width: 1100px;
+    margin: 0 auto 36px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    border-bottom: 1px solid #332c22;
+    padding-bottom: 16px;
+  }
+  .cm2-head h2 {
+    color: #f3ede2;
+    font-size: 2.1rem;
+    font-weight: 600;
+    font-style: italic;
+    margin: 0;
+  }
+  .cm2-head span {
+    font-family: 'IBM Plex Mono', monospace;
+    color: #7d7264;
+    font-size: 0.8rem;
+    letter-spacing: 0.03em;
+  }
+
+  /* Photo frame: corner brackets instead of a glow ring */
+  .cm2-frame {
+    position: relative;
+    background: #0a0908;
+    aspect-ratio: 1 / 1;
+  }
+  .cm2-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(35%) sepia(8%);
+  }
+  .cm2-frame::before,
+  .cm2-frame::after,
+  .cm2-frame span.br,
+  .cm2-frame span.bl {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-color: #c9a24c;
+    border-style: solid;
+    border-width: 0;
+  }
+  .cm2-frame::before { top: -1px; left: -1px; border-top-width: 2px; border-left-width: 2px; }
+  .cm2-frame::after { bottom: -1px; right: -1px; border-bottom-width: 2px; border-right-width: 2px; }
+  .cm2-frame span.br { top: -1px; right: -1px; border-top-width: 2px; border-right-width: 2px; }
+  .cm2-frame span.bl { bottom: -1px; left: -1px; border-bottom-width: 2px; border-left-width: 2px; }
+
+  /* Lead: horizontal spec sheet */
+  .cm2-lead {
+    max-width: 1100px;
+    margin: 0 auto 24px;
+    background: #17140f;
+    border: 1px solid #332c22;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+  }
+  .cm2-lead .cm2-frame { width: 200px; height: 200px; aspect-ratio: auto; }
+  .cm2-lead-body { padding: 24px 28px; display: flex; flex-direction: column; justify-content: center; }
+  .cm2-role-code {
+    font-family: 'IBM Plex Mono', monospace;
+    color: #7fada0;
+    font-size: 0.78rem;
+    letter-spacing: 0.03em;
+    margin-bottom: 8px;
+  }
+  .cm2-name { color: #f3ede2; font-size: 1.55rem; font-weight: 600; font-style: italic; margin-bottom: 12px; }
+  .cm2-meta-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.76rem;
+    color: #8a8072;
+    border-top: 1px solid #332c22;
+    padding-top: 12px;
+    margin-top: 4px;
+  }
+  .cm2-meta-row b { color: #c9a24c; font-weight: 600; }
+  .cm2-links { display: flex; gap: 16px; margin-top: 14px; }
+  .cm2-links a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.76rem;
+    color: #c9a24c;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+  .cm2-links a:hover { border-bottom-color: #c9a24c; }
+
+  /* Grid of remaining members */
+  .cm2-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: #332c22;
+    border: 1px solid #332c22;
+  }
+  .cm2-card { background: #17140f; padding: 20px; }
+  .cm2-card .cm2-frame { margin-bottom: 14px; }
+  .cm2-card .cm2-name { font-size: 1.15rem; margin-bottom: 12px; }
+  .cm2-card .cm2-meta-row { flex-direction: column; gap: 4px; }
+  .cm2-card .cm2-links { margin-top: 12px; }
+
+  @media (max-width: 780px) {
+    .cm2-lead { grid-template-columns: 1fr; }
+    .cm2-lead .cm2-frame { width: 100%; height: auto; aspect-ratio: 16 / 9; }
+    .cm2-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 480px) {
+    .cm2-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<section class="cm2-section">
+  <div class="cm2-head">
+    <h2>Core Members</h2>
+    <span>TEAM / 06</span>
+  </div>
+
+  <!-- Lead -->
+  <div class="cm2-lead">
+    <div class="cm2-frame">
+      <span class="br"></span><span class="bl"></span>
+      <img src="images/member-01.png" alt="Project Lead">
+    </div>
+    <div class="cm2-lead-body">
+      <div class="cm2-role-code">ROLE_PROJECT_LEAD</div>
+      <div class="cm2-name">KRISHNA KUMAR</div>
+      <div class="cm2-meta-row">
+        <span><b>Branch</b> CSE</span>
+        <span><b>Batch</b> 2025-29</span>
+        <span><b>Focus</b> BACKEND AND DATABASE</span>
+      </div>
+      <div class="cm2-links">
+        <a href="https://www.linkedin.com/in/krishna-kumar-3a7843376?utm_source=share_via&utm_content=profile&utm_medium=member_android">linkedin</a>
+        <a href="#">portfolio</a>
+        <a href="https://www.instagram.com/krishnakanhaiyajnv?stkn=MWJwOGpnZm1pcHd1eQ==">instagram</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Remaining 5 -->
+  <div class="cm2-grid">
+    <div class="cm2-card">
+      <div class="cm2-frame">
+        <span class="br"></span><span class="bl"></span>
+        <img src="images/member-02.jpeg" alt="Member">
+      </div>
+      <div class="cm2-role-code">API_INTEGRATION</div>
+      <div class="cm2-name">AAKRITI RANJAN</div>
+      <div class="cm2-meta-row">
+        <span><b>Branch</b> CSE · 2025-29</span>
+        <span><b>Focus</b> API INTEGRATION AND DEPLOYMENT</span>
+      </div>
+      <div class="cm2-links"><a href="https://www.linkedin.com/in/aakriti-ranjan-741737356">linkedin</a><a href="https://www.instagram.com/aakriti_ranjan_09?stkn=MXV0czUxaWlhYjFmcw==">instagram</a></div>
+    </div>
+
+    <div class="cm2-card">
+      <div class="cm2-frame">
+        <span class="br"></span><span class="bl"></span>
+        <img src="images/member-03.jpg" alt="Member">
+      </div>
+      <div class="cm2-role-code">FRONTEND_DEVELOPER</div>
+      <div class="cm2-name">AYUSH KUMAR MANDAL</div>
+      <div class="cm2-meta-row">
+        <span><b>Branch</b> CSE · 2025-29</span>
+        <span><b>Focus</b> FULL STACK DEVELOPMENT</span>
+      </div>
+      <div class="cm2-links"><a href="#">linkedin</a><a href="#">instagram</a></div>
+    </div>
+
+    <div class="cm2-card">
+      <div class="cm2-frame">
+        <span class="br"></span><span class="bl"></span>
+        <img src="images/member-04.jpg" alt="Member">
+      </div>
+      <div class="cm2-role-code">ROLE_ML_ENGINEER</div>
+      <div class="cm2-name">SAURABH KUMAR</div>
+      <div class="cm2-meta-row">
+        <span><b>Branch</b> CSE · 2025-29</span>
+        <span><b>Focus</b> Machine Learning, Data</span>
+      </div>
+      <div class="cm2-links"><a href="https://www.linkedin.com/in/saurav-kumar-54b81037b?utm_source=share_via&utm_content=profile&utm_medium=member_android">linkedin</a><a href="https://www.instagram.com/sauravcodes.ai?utm_source=qr&stkn=MTFza2dqaHNkYXFqMA==">instagram</a></div>
+    </div>
+
+    <div class="cm2-card">
+      <div class="cm2-frame">
+        <span class="br"></span><span class="bl"></span>
+        <img src="images/member-05.jpeg" alt="Member">
+      </div>
+      <div class="cm2-role-code">UI/UX_DESIGNER</div>
+      <div class="cm2-name">SHUBHAM KUMAR</div>
+      <div class="cm2-meta-row">
+        <span><b>Branch</b> CSE · 2025-29</span>
+        <span><b>Focus</b>FRONTEND</span>
+      </div>
+      <div class="cm2-links"><a href="https://www.linkedin.com/in/shubham-raj-820866320?utm_source=share_via&utm_content=profile&utm_medium=member_android">linkedin</a><a href="https://www.instagram.com/shubham_raj.31?stkn=bWpnN2FiN2NqNHE1">instagram</a></div>
+    </div>
+
+    <div class="cm2-card">
+      <div class="cm2-frame">
+        <span class="br"></span><span class="bl"></span>
+        <img src="images/member-06.jpg" alt="Member">
+      </div>
+      <div class="cm2-role-code">ROLE_CONTENT_RESEARCHER</div>
+      <div class="cm2-name">KRISH KUMAR SANT</div>
+      <div class="cm2-meta-row">
+        <span><b>Branch</b> CSE · 2025-29</span>
+        <span><b>Focus</b> Research, Content</span>
+      </div>
+      <div class="cm2-links"><a href="https://www.linkedin.com/in/krish-kumar-3ab44237a?utm_source=share_via&utm_content=profile&utm_medium=member_android">linkedin</a><a href="#">instagram</a></div>
+    </div>
+  </div>
+</section>
